@@ -1,0 +1,27 @@
+List<String> emails = Arrays.asList("example1@gmail.com", "example2@yahoo.com", "example3@hotmail.com", "example4@gmail.com");
+
+// Search for all Gmail addresses
+List<String> gmailAddresses = emails.stream()
+        .filter(email -> email.endsWith("@gmail.com"))
+        .collect(Collectors.toList());
+
+// Search for all Hotmail addresses
+List<String> hotmailAddresses = emails.stream()
+        .filter(email -> email.endsWith("@hotmail.com"))
+        .collect(Collectors.toList());
+
+// Search for all Yahoo addresses
+List<String> yahooAddresses = emails.stream()
+        .filter(email -> email.endsWith("@yahoo.com"))
+        .collect(Collectors.toList());
+
+// Search for all addresses that contain "example"
+List<String> exampleAddresses = emails.stream()
+        .filter(email -> email.contains("example"))
+        .collect(Collectors.toList());
+
+// Print out the results
+System.out.println("Gmail addresses: " + gmailAddresses);
+System.out.println("Hotmail addresses: " + hotmailAddresses);
+System.out.println("Yahoo addresses: " + yahooAddresses);
+System.out.println("Example addresses: " + exampleAddresses);
